@@ -156,3 +156,34 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Surajit Doc
+Commands:
+> npm install -g angular-cli-ghpages
+
+
+Go to project folder and run git bash.
+>git init
+
+> git remote add origin url
+
+>>ng build --prod --base-href "https://surajithit2004.github.io/spring-petclinic-angular"
+
+Also add deploy part in package.json like below:
+"deploy": "gh-pages -d dist"
+
+"scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "deploy": "gh-pages -d dist"
+  }
+
+  and also add this:
+  "homepage": "https://surajithit2004.github.io/spring-petclinic-angular/",
+
+  --
+  

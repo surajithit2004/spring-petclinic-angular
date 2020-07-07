@@ -2,13 +2,15 @@
   "name": "spring-petclinic-angular",
   "version": "8.0.1",
   "license": "MIT",
+  "homepage": "https://surajithit2004.github.io/spring-petclinic-angular/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "gh-pages -d dist"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +41,7 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^6.0.106",
+    "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
