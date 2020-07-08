@@ -186,4 +186,14 @@ Also add deploy part in package.json like below:
   "homepage": "https://surajithit2004.github.io/spring-petclinic-angular/",
 
   --
-  
+  Got error in Travis for build #4, as package.json was not in sync.
+
+  npm ERR! cipm can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+
+  So, again running the following command to get latest package lock json file.
+  >npm i 
+
+  --
+  Now after chagng readme.md file also, changes are not getting reflected in Desktop Github.
+  Also package-lock.json has been updated but not reflecting.
+  --
