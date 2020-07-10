@@ -23,7 +23,10 @@ before_script:
 - npm install
 - ng build
 
-script: ng test --karma-config karma.conf.js --watch=false
+script: 
+  - ng test --karma-config karma.conf.js --watch=false
+  - npm run build
+
 
 deploy:
   provider: pages

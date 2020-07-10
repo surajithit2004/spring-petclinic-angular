@@ -197,3 +197,66 @@ Also add deploy part in package.json like below:
   Now after chagng readme.md file also, changes are not getting reflected in Desktop Github.
   Also package-lock.json has been updated but not reflecting.
   --
+  Git old version problem->
+
+  >> git --version
+git version 1.9.5.msysgit.1
+
+Getting this error while pushing code in master:
+ >> git push origin master
+fatal: unable to access 'https://github.com/surajithit2004/spring-petclinic-angular.git/': error:1407742E:SSL routines:SSL23_GET_SERVER_HELLO:tlsv1 alert protocol version
+
+Found the problem here:
+https://stackoverflow.com/questions/48938019/git-pull-push-unable-to-access-https-ssl-routines-seem-to-be-down
+
+Problem is with old git version and it was previewgit.
+Now updated it to
+>> git --version
+git version 2.27.0.windows.1
+
+----------
+Date: 09 July 2020
+
+Step:: Build Angular application.
+>> ng build --prod --base-href=/petclinic/ --deploy-url=/petclinic/
+
+Trying to build by
+>> ng build 
+and getting below error:
+
+C:\Surajit\NL\code\petclinic\spring-petclinic-angular1\spring-petclinic-angular>ng build
+An unhandled exception occurred: Cannot find module 'C:\Surajit\NL\code\petclinic\spring-petclinic-angular1\spring-petclinic-angular\node_modules\@angular-devkit\build-angular\src\browser'
+Require stack:
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\node-modules-architect-host.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\index.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\models\architect-command.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\commands\build-impl.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\export-ref.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\index.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\utilities\json-schema.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\models\command-runner.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\lib\cli\index.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\lib\init.js
+- C:\Users\surajit\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+See "C:\Users\surajit\AppData\Local\Temp\ng-zJWoM5\angular-errors.log" for further details.
+
+
+Google:
+Install @angular-devkit/build-angular as dev dependency. This package is newly introduced in Angular 6.0
+
+npm install --save-dev @angular-devkit/build-angular
+
+or,
+
+yarn add @angular-devkit/build-angular --dev
+
+-----------
+10 July 
+
+script: ng test --karma-config karma.conf.js --watch=false
+
+
+modified to
+script: 
+  - ng test --karma-config karma.conf.js --watch=false
+  - npm run build
