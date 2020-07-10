@@ -267,3 +267,10 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local_dir: dist
+
+
+now removed /dist from .gitignore file
+# compiled output
+
+/tmp
+/out-tsc
