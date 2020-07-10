@@ -260,3 +260,10 @@ modified to
 script: 
   - ng test --karma-config karma.conf.js --watch=false
   - npm run build
+
+Adding local_dir
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local_dir: dist
